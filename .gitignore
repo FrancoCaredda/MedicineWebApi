@@ -3,3 +3,7 @@
 /obj
 /Migrations
 /.vs
+/LearnWebApi/bin
+/LearnWebApi/obj
+/LearnWebApi.Tests/bin
+/LearnWebApi.Tests/obj
