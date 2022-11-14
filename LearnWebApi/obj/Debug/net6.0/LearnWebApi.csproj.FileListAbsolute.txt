@@ -84,3 +84,5 @@ D:\Projects\LearnWebApi\LearnWebApi\bin\Debug\net6.0\System.Net.Http.Formatting.
 D:\Projects\LearnWebApi\LearnWebApi\bin\Debug\net6.0\System.Web.Http.dll
 D:\Projects\LearnWebApi\LearnWebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Projects\LearnWebApi\LearnWebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\Projects\LearnWebApi\LearnWebApi\bin\Debug\net6.0\LearnWebApi.xml
+D:\Projects\LearnWebApi\LearnWebApi\obj\Debug\net6.0\LearnWebApi.xml

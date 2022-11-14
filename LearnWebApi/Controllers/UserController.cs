@@ -18,7 +18,9 @@ namespace LearnWebApi.Controllers
             _context = context;
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Put(int id, [FromBody]UserDTO dto)
         {
             try
@@ -46,6 +48,8 @@ namespace LearnWebApi.Controllers
         } 
 
         [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Delete([FromBody]UserDTO dto)
         {
             var users = _context.Users.Where(u => u.Email == dto.Email).ToArray();
@@ -62,6 +66,8 @@ namespace LearnWebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Delete(int id)
         {
             try
@@ -80,6 +86,8 @@ namespace LearnWebApi.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post([FromBody]UserDTO dto)
         {
             var validator = new UserValidator(dto);
@@ -99,6 +107,9 @@ namespace LearnWebApi.Controllers
         }
 
         [HttpGet("{id}")]
+
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Get(int id)
         {
             try
@@ -116,6 +127,8 @@ namespace LearnWebApi.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+
         public IActionResult Get()
         {
             var mapper = new UserMapper();

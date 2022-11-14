@@ -1,9 +1,14 @@
-﻿namespace LearnWebApi.Model.DTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LearnWebApi.Model.DTO
 {
     public class MedicineDTO
     {
+        [Required]
         public string Name { get; set; }
+        [Required]
         public double Price { get; set; }
+        [Required]
         public string Type { get; set; }
     }
 }

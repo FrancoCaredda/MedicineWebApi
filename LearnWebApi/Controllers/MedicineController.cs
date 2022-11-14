@@ -18,7 +18,16 @@ namespace LearnWebApi.Controllers
             _context = context;
         }
 
-        [HttpPut]
+        /// <summary>
+        /// Test
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+
+        [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Put(int id, [FromBody]MedicineDTO dto)
         {
             try
@@ -49,6 +58,8 @@ namespace LearnWebApi.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post([FromBody]MedicineDTO dto)
         {
             var validator = new MedicineValidator(dto);
@@ -68,6 +79,8 @@ namespace LearnWebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Delete(int id)
         {
             var medicine = _context.Medicines.Where(m => m.MedicineId == id).ToArray();
@@ -84,6 +97,8 @@ namespace LearnWebApi.Controllers
         }
 
         [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Delete([FromBody]MedicineDTO dto)
         {
             var medicine = _context.Medicines.Where(m => m.Name == dto.Name).ToArray();
@@ -100,6 +115,8 @@ namespace LearnWebApi.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Get(int id)
         {
             try
@@ -117,6 +134,7 @@ namespace LearnWebApi.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Get()
         {
             MedicineMapper medicineMapper = new MedicineMapper();
